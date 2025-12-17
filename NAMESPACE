@@ -3,3 +3,5 @@
 export(bsi_palettes)
 export(get_pal)
 export(print_pal)
+export(scale_colour_bsi)
+export(scale_fill_bsi)

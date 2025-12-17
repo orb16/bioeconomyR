@@ -2,21 +2,24 @@
 % Please edit documentation in R/bsi_colours.R
 \name{get_pal}
 \alias{get_pal}
-\title{Select a BSI palette}
+\title{Get a BSI palette}
 \usage{
-get_pal(name)
+get_pal(name, n = NULL, reverse = FALSE)
 }
 \arguments{
 \item{name}{Palette name. One of `names(bsi_palettes)`.}
+
+\item{n}{Optional number of colours to return (first `n`).}
+
+\item{reverse}{Logical; reverse the palette order.}
 }
 \value{
-A named character vector of hex colours.
+A character vector of hex colours.
 }
 \description{
-Select a BSI palette
+Get a BSI palette
 }
 \examples{
-get_pal("secondary_dark")
 get_pal("classic")
-get_pal("secondary_light")
+get_pal("secondary_dark", n = 3)
 }

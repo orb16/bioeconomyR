@@ -4,16 +4,24 @@
 \alias{print_pal}
 \title{Plot a colour palette}
 \usage{
-print_pal(x, ...)
+print_pal(x, labels = c("index", "none"), ...)
 }
 \arguments{
-\item{x}{A vector of colours (e.g., hex codes).}
+\item{x}{Either a palette name (character length 1) or a vector of colours.}
+
+\item{labels}{What to label each swatch with:
+- `"none"`: no labels
+- `"index"`: 1, 2, 3, ...}
 
 \item{...}{Reserved for future use.}
 }
 \value{
-Invisibly returns `x`.
+Invisibly returns the colour vector.
 }
 \description{
 Plot a colour palette
+}
+\examples{
+print_pal("classic")
+print_pal(get_pal("secondary_dark", n = 5))
 }

@@ -1,0 +1,79 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# bioeconomyR
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of bioeconomyR is to provide easy access to BSI themed colours. 
+
+## Installation
+
+You can install the development version of bioeconomyR from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("pak")
+pak::pak("orb16/bioeconomyR")
+```
+
+Or using devtools:
+
+```r
+devtools::install_github("orb16/bioeconomyR")
+```
+
+## Example: manual palette use
+
+This is a basic example which shows you how to use the palettes in a way that is compatible with both base R and ggplot2
+
+```{r example}
+library(bioeconomyR)
+library(ggplot2)
+## basic example code
+
+head(iris)
+unique(iris$Species)
+# 3 species. We will use the classic palette
+bioeconomyR::print_pal("classic")
+
+
+classicPal <- bioeconomyR::get_pal("classic")
+ourCols <- classicPal[2:4] # just the light cols
+ourCols
+
+ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width)) + 
+  geom_point(shape = 21, colour = classicPal[1], 
+             aes(fill = Species)) +
+  scale_fill_manual(values = ourCols) +
+  theme_classic() + 
+  theme(legend.position = "bottom")
+
+```
+
+## Example: ggplot2 specific
+
+```{r ggplot2Example}
+
+ggplot(iris, aes(Sepal.Length, Sepal.Width)) +
+  geom_point(aes(fill = Species),
+             colour = "black",
+                      shape = 21, size = 2) +
+  scale_fill_bsi("classic") +
+  theme_classic() + 
+  theme(legend.position = "bottom")
+
+
+```
