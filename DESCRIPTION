@@ -1,0 +1,18 @@
+Package: bioeconomyR
+Type: Package
+Title: Colours and themes for R for Bioeconomy Science Institute
+Version: 0.1.0
+Authors@R: c(
+    person(
+      "Olivia", "Burge",
+      email = "burgeo@landcareresearch.co.nz",
+      role = c("aut", "cre")
+    )
+  )
+Description: At this stage, this package is just a set of colours based on Bioeconomy Science Institute brand colours.
+    In future, I may add a ggplot2 theme.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: 
+RoxygenNote: 7.3.2
